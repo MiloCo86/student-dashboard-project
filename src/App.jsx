@@ -4,7 +4,7 @@ import HeaderApp from "./Components/HeaderApp";
 import ClassMenu from "./Components/ClassMenu";
 import StudenList from "./Components/StudentList";
 
-import data from "./Data/data.json";
+import data from "./data/data.json";
 
 import "./Styles/App.css";
 
