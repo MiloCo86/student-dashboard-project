@@ -1,6 +1,6 @@
-import "../Styles/Header.css"
+import "../Styles/HeaderApp.css"
 
-function Header(){
+function HeaderApp(){
     return(
         <div className="header-container">
             <h1>Student Dashboard</h1>
@@ -8,4 +8,4 @@ function Header(){
     )
 }
 
-export default Header;
+export default HeaderApp;

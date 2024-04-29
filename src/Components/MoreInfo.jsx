@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import "../Styles/MoreInfo.css"
 
 
-
 function MoreInfo({student, notes, saveNotes}){
     const cwCurrentTotal = Number(student.codewars.current.total);
     const cwGoal = Number(student.codewars.goal.total);
@@ -18,30 +17,35 @@ function MoreInfo({student, notes, saveNotes}){
     const certGitHub = student.certifications.github ? '✔️':'❌';
 
 
-    const [Commenter, setCommenter] = useState('');
+    const [commenter, setCommenter] = useState('');
     const [comment, setComment] = useState('');
 
     const [studentNotes, SetStudentNotes] = useState([...notes]);
 
-    useEffect(()=>{saveNotes(student.id, studentNotes)},[studentNotes])
+    let displayNotes=[...studentNotes]
+
+    useEffect(()=>{saveNotes(student.id, studentNotes)},[studentNotes]);
 
 
     function addNote(event){
 
         event.preventDefault();
-        SetStudentNotes([...studentNotes, `${Commenter}. says, "${comment}"`])
+        SetStudentNotes([...studentNotes, `${commenter}. says, "${comment}"`]);
+
+        setCommenter('');
+        setComment('');
+ 
     }
 
-    let displayNotes=[...studentNotes]
 
     function deleteNote(noteToDelete){
-        console.log(studentNotes)
+        
         let newNotes= studentNotes.filter(note=>{
             if(note!=noteToDelete){
-                return note
+                return note;
             }
         })
-        SetStudentNotes(newNotes)
+        SetStudentNotes(newNotes);
     }
 
     
@@ -52,7 +56,6 @@ function MoreInfo({student, notes, saveNotes}){
     })
     
     
-
     return(
         <div className="more-info">
             <div className="more-info-data">
@@ -82,9 +85,9 @@ function MoreInfo({student, notes, saveNotes}){
                 <div className="comment_area">
                     <form onSubmit={addNote}>
                         <label>Commenter Name</label>
-                        <input onChange={(e)=>{setCommenter(e.target.value)}} name="comenter" type="text" />
+                        <input onChange={(e)=>{setCommenter(e.target.value)}} value={commenter} name="comenter" type="text" />
                         <label>Comment</label>
-                        <input onChange={(e)=>{setComment(e.target.value)}} name="comment" type="text" />
+                        <input onChange={(e)=>{setComment(e.target.value)}} value={comment} name="comment" type="text" />
                         <button>Add Note</button>
                     </form>
                     <div className="notes">

@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import Header from "./components/Header";
+import HeaderApp from "./Components/HeaderApp";
 import ClassMenu from "./Components/ClassMenu";
 import StudenList from "./Components/StudentList";
 
-import data from "./Data/data.json"
+import data from "./Data/data.json";
 
-import "./Styles/App.css"
+import "./Styles/App.css";
 
 
 function App() {
@@ -14,27 +14,22 @@ function App() {
   const [studentListTitle, setStudentListTitle] = useState('All Students');
 
   function sortEstudents (startDay){
-    if(startDay == 'AllStudents'){
+    if(startDay == 'All Students'){
       setCurrentData([...data]);
       setStudentListTitle('All Students');
     } else{
-      let filterData = data.filter(student => student.cohort.cohortCode === startDay);
+      const cohortStartDate = startDay.replace(" ", "");
+      const filterData = data.filter(student => student.cohort.cohortCode === cohortStartDate);
+
       setCurrentData([...filterData]);
-      if (startDay == 'Winter2025') setStudentListTitle('Winter 2025');
-      if (startDay == 'Fall2025') setStudentListTitle('Fall 2025');
-      if (startDay == 'Summer2025') setStudentListTitle('Summer 2025');
-      if (startDay == 'Spring2025') setStudentListTitle('Spring 2025');
-      if (startDay == 'Winter2026') setStudentListTitle('Winter 2026');
-      if (startDay == 'Fall2026') setStudentListTitle('Fall 2026');
-      if (startDay == 'Summer2026') setStudentListTitle('Summer 2026');
-      if (startDay == 'Spring2026') setStudentListTitle('Spring 2026');
+      setStudentListTitle(startDay);
     }
   }
 
 
   return (
     <div className="container">
-      <Header/>
+      <HeaderApp/>
       <ClassMenu sortFunction={sortEstudents}/>
       <StudenList data={currentData} title={studentListTitle}/>
     </div>
