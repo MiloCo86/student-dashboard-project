@@ -1,0 +1,73 @@
+.student-list-container{
+    width: 95%;
+    min-width: 440px;
+    grid-area: student-list;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+.student-list-container h3{
+    font-weight: bold;
+}
+.student-list-container p{
+    margin-top: -15px;
+    font-size: 12px;
+    
+}
+.student-list-container span{
+    color: var(--main-color);
+}
+.student-display-container{
+    display: grid;
+    min-width: none;
+    width: 95%;
+    height: 410px;
+    overflow: scroll;
+    overflow-y: none;
+    list-style: none;
+    padding: 0;
+}
+.student-display-container::-webkit-scrollbar{
+   width: 12px;
+}
+.student-display-container::-webkit-scrollbar-track{
+    display: hidden;
+}
+.student-display-container::-webkit-scrollbar-thumb{
+    border-radius: 8px;
+    height: 60px;
+    background-color: var(--main-color);
+}
+.student-list-navbar{
+    display: flex;
+    justify-content: space-between;
+}
+.dropMenu select {
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-right: 55px;
+    background-color: white;
+    color: var(--main-color);
+    padding: 10px;
+    width: 100px;
+    border: none;
+    font-size: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    outline: none;
+    cursor: pointer;
+}
+
+.dropMenu select option {
+  padding: 30px;
+  cursor: pointer;
+}
+.photo_display_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 105px);
+    grid-auto-flow: row;
+}
+.name_display_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    grid-auto-flow: row;
+}

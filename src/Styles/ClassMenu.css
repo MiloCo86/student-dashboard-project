@@ -1,0 +1,24 @@
+.class-menu-container{
+    min-width: 330px;
+    margin-left: 20px;
+    grid-area: class-menu; 
+}
+.class-menu-container h3{
+    font-weight: bold;
+    text-align: center;
+}
+.class-menu-container ul{
+    width: 80%;
+    list-style: none;
+}
+.class-menu-container li{   
+    padding: 12px;
+    border-bottom: 2px solid var(--main-color);
+    font-weight: bold;
+}
+.class-menu-container p{
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    width: fit-content;
+}

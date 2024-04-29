@@ -1,0 +1,16 @@
+.student_name{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 180px;
+    height: 20px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 25px;
+    cursor: pointer;
+}
+.name h4{
+    margin: 0px;
+    font-size: 15px;
+}

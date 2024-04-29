@@ -1,0 +1,41 @@
+.Student-card-container{
+    display: grid;
+    width: 95%;
+    height: auto;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    padding: 5px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    margin-top: 7px;
+    grid-template-columns: 100px 1fr 0.5fr;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas: 
+            "photo info ontrack"
+            "more-info more-info more-info";
+    align-items: center;
+}
+.on-track{
+    grid-area: ontrack;
+}
+.Student-card-container img{
+    grid-area: photo;
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+}
+.Studen-info{
+    grid-area: info;
+}
+.Studen-info h5{
+    margin-top: 10px;
+    margin-bottom: 13px;
+}
+.Studen-info p {
+    margin-top: -10px;
+}
+.show-more{
+    padding-top: 10px;
+    cursor: pointer;
+}
+
